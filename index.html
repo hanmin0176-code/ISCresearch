@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유병자 인수예외질환 검색</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page" id="pageRoot">
+      <header class="topbar">
+        <div class="topbar__left">
+          <div class="logo-mark">ISC</div>
+          <div>
+            <p class="eyebrow">내부 검색 시스템</p>
+            <h1 class="topbar__title">유병자 인수예외질환 검색</h1>
+          </div>
+        </div>
+        <div class="topbar__right hidden" id="sessionBox">
+          <span class="session-name" id="sessionName"></span>
+          <button class="ghost-button" id="logoutButton" type="button">로그아웃</button>
+        </div>
+      </header>
+
+      <main class="hero" id="heroSection">
+        <section class="search-panel">
+          <div class="search-panel__header">
+            <div class="logo-circle">AI</div>
+            <h2 class="headline">보험사 인수예외질환을 빠르게 찾으세요</h2>
+            <p class="subcopy">
+              질환코드, 질환명, 별칭을 검색하고 보험사/상품구분 기준으로 결과를 확인합니다.
+            </p>
+          </div>
+
+          <form id="searchForm" class="search-form">
+            <div class="search-bar">
+              <select id="insurerSelect" class="search-control">
+                <option value="ALL">보험사 전체</option>
+              </select>
+              <select id="productTypeSelect" class="search-control">
+                <option value="ALL">가능상품구분</option>
+              </select>
+              <input
+                id="searchInput"
+                class="search-input"
+                type="text"
+                placeholder="예: A630, 항문생식기의 사마귀, 곤지름"
+                autocomplete="off"
+              />
+              <button type="submit" class="search-button">검색</button>
+            </div>
+          </form>
+
+          <p class="helper-text">
+            2개 이상 키워드는 '공백'으로 입력하세요. 검색 후 결과 테이블은 화면 중앙~하단에 표시됩니다.
+          </p>
+          <p class="status-text" id="statusText"></p>
+        </section>
+
+        <section class="results-section hidden" id="resultsSection">
+          <div class="results-summary" id="resultsSummary"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>보험사</th>
+                  <th>예외질환</th>
+                  <th>질환코드</th>
+                  <th>최소경과</th>
+                  <th>치료기간</th>
+                  <th>입원기준</th>
+                  <th>수술여부</th>
+                  <th>가능상품구분</th>
+                  <th>비고</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal" id="loginModal">
+      <form class="modal-card" id="loginForm">
+        <h3>관리자 코드 입력</h3>
+        <p class="modal-copy">회원가입 없이 관리자 코드로 내부 검색 시스템에 접속합니다.</p>
+        <input
+          id="accessCodeInput"
+          class="modal-input"
+          type="password"
+          placeholder="관리자 코드"
+          autocomplete="current-password"
+          required
+        />
+        <button class="modal-button" type="submit">접속하기</button>
+        <p class="modal-error" id="loginError"></p>
+      </form>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
