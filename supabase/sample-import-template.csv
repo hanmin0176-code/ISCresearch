@@ -1,0 +1,2 @@
+insurer_name,product_type,disease_code,disease_name,search_keywords,original_exception_text,min_elapsed_text,treatment_period_text,hospitalization_text,surgery_text,remarks,source_file,source_version,applied_at,is_active
+흥국생명,335,A630,항문생식기의 사마귀,"A630 항문생식기의 사마귀 곤지름 콘딜로마","항문생식기의 사마귀",1개월,치료종결,입원14일 이내,무관,예시 데이터입니다,example.xlsx,v1,2026-04-07T00:00:00+09:00,true
